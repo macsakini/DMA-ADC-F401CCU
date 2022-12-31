@@ -1,4 +1,5 @@
 --cpu=Cortex-M4.fp.sp
+".\objects\motor.o"
 ".\objects\main_1.o"
 ".\objects\hal_gpio.o"
 ".\objects\hal_timer.o"

@@ -385,6 +385,11 @@
           <GroupName>User Application</GroupName>
           <Files>
             <File>
+              <FileName>motor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\motor.c</FilePath>
+            </File>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
@@ -413,6 +418,11 @@
               <FileName>HAL_TIMER.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\HAL_TIMER.h</FilePath>
+            </File>
+            <File>
+              <FileName>motor.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\motor.h</FilePath>
             </File>
           </Files>
         </Group>

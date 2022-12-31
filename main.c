@@ -1,6 +1,7 @@
 #include "stm32f4xx.h"
 #include "HAL_GPIO.h"
 #include "HAL_TIMER.h"
+#include "motor.h"
 
 void Init_GPIO_RCC(void);
 void Init_TIM_RCC(void);
@@ -17,13 +18,23 @@ int main(void){
 	
 	//GPIO
 	GPIO_Func();
+	
 	//TIMERS
 	TIM_Func();
 
 	
 	while(1){
 		gpio_togglepin(GPIOC, 13);
-		delayMs(1000);
+		//delayMs(1000);
+		if(GPIOC->IDR & GPIO_IDR_IDR_13){
+			//Control Movement
+			determineSpeedA();
+			determineSpeedB();
+			initiateBrake();
+		}else{
+			TIM10->CCR1 = 500;
+			TIM11->CCR1 = 500;
+		}
 	}
 }
 
@@ -83,10 +94,10 @@ void TIM_Func(void){
 	
 	TIM10->PSC = 16;
 	TIM10->ARR = 1000;
-	TIM10->CCR1 = 250;
+	//TIM10->CCR1 = 300;
 	 
 	TIM10->EGR |= (1<<0); // Event generation
-	TIM10->CCER |= ( (0<<1) | (0<<0) ); //Output polarity | Output enable
+	TIM10->CCER |= ( (0<<1) | (1<<0) ); //Output polarity | Output enable
 	TIM10->CR1 |= (1<<0); // Enable Counter
 	
 	//Timer 11 Channel 1
@@ -94,14 +105,14 @@ void TIM_Func(void){
 	TIM11->CCMR1 |=  ( (1<<6) | (1<<5) | (0<<4) ); //PWM MODE 1
 	TIM11->CCMR1 |= (1<<3); //Preload Enable
 	TIM11->CCMR1 |= (1<<2);
-	TIM11->CR1 |= (1<<7);
+	TIM11->CR1 |= (1<<7); //ARPE
 	
-	TIM11->PSC = 8;
-	TIM11->ARR = 2000;
-	TIM11->CCR1 = 1500;
+	TIM11->PSC = 16;
+	TIM11->ARR = 1000;
+	//TIM11->CCR1 = 700;
 	
 	TIM11->EGR |= (1<<0); //Event generation
 	TIM11->CCER |= ( (0<<1) | (1<<0) );//Output polarity | Output enable
-	TIM11->CR1 |= (1<<0); // ARPE| Enable Counter	
+	TIM11->CR1 |= (1<<0); // Enable Counter	
 }
 
