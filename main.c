@@ -8,8 +8,15 @@ void Init_GPIO(void);
 void Init_Timer(void);
 
 int main(void){	
+	//Initialize clocks for components N?B THIS IS NECESSARY
+	Init_GPIO_RCC();
+	Init_TIM_RCC();
+	
+	
+	
+	
 	while(1){
-		
+		gpio_togglepin(GPIOC, 13);
 	}
 }
 
@@ -22,6 +29,9 @@ void Init_GPIO_RCC(void){
 void Init_TIM_RCC(void){
 	TIMER10_CLOCK_RCC_ENABLE
 	TIMER11_CLOCK_RCC_ENABLE
+	
+	//Initialize Timer 4 clock as delay uses Timer 4
+	TIMER4_CLOCK_RCC_ENABLE
 }
 
 void Init_GPIO(void){

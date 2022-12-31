@@ -28,6 +28,62 @@ Project File Date:  12/30/2022
 *** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
 Note: source file '.\main.c' - object file renamed from '.\Objects\main.o' to '.\Objects\main_1.o'.
+HAL_GPIO.c(1): warning: In file included from...
+./HAL_GPIO.h(3): warning: In file included from...
+C:/Users/Vivian/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f4xx.h(11): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+                                               ^
+C:/Users/Vivian/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f4xx.h(12): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *                code will be based on direct access to peripheral<92>s registers 
+                                                                    ^
+HAL_GPIO.c(1): warning: In file included from...
+./HAL_GPIO.h(60): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+static void initGPIO(){
+                    ^
+                     void
+HAL_GPIO.c(9): warning: unused parameter 'Port' [-Wunused-parameter]
+void gpio_readpin(GPIO_TypeDef *Port, uint32_t pin, int state){
+                                ^
+HAL_GPIO.c(9): warning: unused parameter 'pin' [-Wunused-parameter]
+void gpio_readpin(GPIO_TypeDef *Port, uint32_t pin, int state){
+                                               ^
+HAL_GPIO.c(9): warning: unused parameter 'state' [-Wunused-parameter]
+void gpio_readpin(GPIO_TypeDef *Port, uint32_t pin, int state){
+                                                        ^
+HAL_GPIO.c(1): warning: In file included from...
+./HAL_GPIO.h(60): warning: unused function 'initGPIO' [-Wunused-function]
+static void initGPIO(){
+            ^
+7 warnings generated.
+compiling HAL_GPIO.c...
+main.c(1): warning: In file included from...
+C:/Users/Vivian/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f4xx.h(11): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+                                               ^
+C:/Users/Vivian/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f4xx.h(12): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+  *                code will be based on direct access to peripheral<92>s registers 
+                                                                    ^
+main.c(2): warning: In file included from...
+./HAL_GPIO.h(60): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+static void initGPIO(){
+                    ^
+                     void
+main.c(3): warning: In file included from...
+./HAL_TIMER.h(14): warning: no previous extern declaration for non-static variable 'myticks' [-Wmissing-variable-declarations]
+uint32_t myticks = 0;
+         ^
+./HAL_TIMER.h(14): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t myticks = 0;
+^
+./HAL_TIMER.h(17): warning: no newline at end of file [-Wnewline-eof]
+void Init_Delay(void);
+                      ^
+main.c(2): warning: In file included from...
+./HAL_GPIO.h(60): warning: unused function 'initGPIO' [-Wunused-function]
+static void initGPIO(){
+            ^
+6 warnings generated.
+compiling main.c...
 HAL_TIMER.c(1): warning: In file included from...
 ./HAL_TIMER.h(3): warning: In file included from...
 C:/Users/Vivian/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f4xx.h(11): warning: invalid UTF-8 in comment [-Winvalid-utf8]
@@ -37,67 +93,23 @@ C:/Users/Vivian/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/
   *                code will be based on direct access to peripheral<92>s registers 
                                                                     ^
 HAL_TIMER.c(1): warning: In file included from...
-./HAL_TIMER.h(10): warning: no newline at end of file [-Wnewline-eof]
-void delayUs(uint32_t us);
-                          ^
-HAL_TIMER.c(4): warning: unused parameter 'ms' [-Wunused-parameter]
-void delayMs(uint32_t ms){
+./HAL_TIMER.h(14): warning: no previous extern declaration for non-static variable 'myticks' [-Wmissing-variable-declarations]
+uint32_t myticks = 0;
+         ^
+./HAL_TIMER.h(14): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32_t myticks = 0;
+^
+./HAL_TIMER.h(17): warning: no newline at end of file [-Wnewline-eof]
+void Init_Delay(void);
                       ^
-HAL_TIMER.c(8): warning: unused parameter 'us' [-Wunused-parameter]
-void delayUs(uint32_t us){
-                      ^
-5 warnings generated.
+4 warnings generated.
 compiling HAL_TIMER.c...
-main.c(1): warning: In file included from...
-C:/Users/Vivian/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f4xx.h(11): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-  *              - To use or not the peripheral<92>s drivers in application code(i.e. 
-                                               ^
-C:/Users/Vivian/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f4xx.h(12): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-  *                code will be based on direct access to peripheral<92>s registers 
-                                                                    ^
-main.c(3): warning: In file included from...
-./HAL_TIMER.h(10): warning: no newline at end of file [-Wnewline-eof]
-void delayUs(uint32_t us);
-                          ^
-3 warnings generated.
-compiling main.c...
-HAL_GPIO.c(1): warning: In file included from...
-./HAL_GPIO.h(3): warning: In file included from...
-C:/Users/Vivian/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f4xx.h(11): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-  *              - To use or not the peripheral<92>s drivers in application code(i.e. 
-                                               ^
-C:/Users/Vivian/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.16.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include\stm32f4xx.h(12): warning: invalid UTF-8 in comment [-Winvalid-utf8]
-  *                code will be based on direct access to peripheral<92>s registers 
-                                                                    ^
-HAL_GPIO.c(3): warning: unused parameter 'Port' [-Wunused-parameter]
-void gpio_writepin(GPIO_TypeDef Port, uint32_t pin, uint8_t state){
-                                ^
-HAL_GPIO.c(3): warning: unused parameter 'pin' [-Wunused-parameter]
-void gpio_writepin(GPIO_TypeDef Port, uint32_t pin, uint8_t state){
-                                               ^
-HAL_GPIO.c(3): warning: unused parameter 'state' [-Wunused-parameter]
-void gpio_writepin(GPIO_TypeDef Port, uint32_t pin, uint8_t state){
-                                                            ^
-HAL_GPIO.c(7): warning: unused parameter 'Port' [-Wunused-parameter]
-void gpio_readpin(GPIO_TypeDef Port, uint32_t pin, uint8_t state){
-                               ^
-HAL_GPIO.c(7): warning: unused parameter 'pin' [-Wunused-parameter]
-void gpio_readpin(GPIO_TypeDef Port, uint32_t pin, uint8_t state){
-                                              ^
-HAL_GPIO.c(7): warning: unused parameter 'state' [-Wunused-parameter]
-void gpio_readpin(GPIO_TypeDef Port, uint32_t pin, uint8_t state){
-                                                           ^
-HAL_GPIO.c(11): warning: unused parameter 'Port' [-Wunused-parameter]
-void gpio_togglepin(GPIO_TypeDef Port, uint32_t pin){
-                                 ^
-HAL_GPIO.c(11): warning: unused parameter 'pin' [-Wunused-parameter]
-void gpio_togglepin(GPIO_TypeDef Port, uint32_t pin){
-                                                ^
-10 warnings generated.
-compiling HAL_GPIO.c...
 linking...
-Program Size: Code=396 RO-data=420 RW-data=0 ZI-data=1632  
-".\Objects\dma-adc.axf" - 0 Error(s), 18 Warning(s).
+.\Objects\dma-adc.axf: Error: L6200E: Symbol myticks multiply defined (by hal_timer.o and main_1.o).
+Not enough information to list image symbols.
+Not enough information to list load addresses in the image map.
+Finished: 2 information, 0 warning and 1 error messages.
+".\Objects\dma-adc.axf" - 1 Error(s), 17 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -123,11 +135,12 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.6.0
 
    * Component: Keil::Device:Startup:2.6.3
-      Source file:   MDK/Device/Source/ARM/STM32F401xx_OPT.s
-      Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
       Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
       Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f401xc.s
+      Source file:   MDK/Device/Source/ARM/STM32F401xx_OPT.s
+      Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
       Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
+Target not created.
 Build Time Elapsed:  00:00:01
 </pre>
 </body>
