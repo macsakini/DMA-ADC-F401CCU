@@ -11,7 +11,7 @@
 void startTimer(void);
 
 void TIM4_IRQHandler(void);
-uint32_t myticks = 0;
+static uint32_t myticks = 0;
 void delayMs(uint32_t ms);
 void delayUs(uint32_t us);
 void Init_Delay(void);

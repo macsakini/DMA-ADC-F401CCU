@@ -14,3 +14,4 @@ void gpio_togglepin(GPIO_TypeDef *Port, uint32_t pin){
 	Port->ODR ^= (1<<pin);
 }
 
+

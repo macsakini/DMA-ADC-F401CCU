@@ -42,21 +42,19 @@
 #define GPIOC_CLOCK_RCC_ENABLE			(RCC->AHB1ENR |= (1<<2));
 #define GPIOD_CLOCK_RCC_ENABLE			(RCC->AHB1ENR |= (1<<3));
 
-// Function definitions
-static void initGPIO(void);
-void gpio_writepin(GPIO_TypeDef *Port, uint32_t pin, int state);
-void gpio_readpin(GPIO_TypeDef *Port, uint32_t pin, int state);
-void gpio_togglepin(GPIO_TypeDef *Port, uint32_t pin);
-
-
 //GPIO INSTANCE STRUCTURE
-struct GPIOstruct{
+struct GPIOStruct{
+	uint32_t PIN;
 	uint32_t MODER;
 	uint32_t OTYPER;
 	uint32_t SPEEDR;
 	uint32_t PUPDR;
 };
 
-static void initGPIO(){
-	
-}
+// Function definitions
+void gpio_writepin(GPIO_TypeDef *Port, uint32_t pin, int state);
+void gpio_readpin(GPIO_TypeDef *Port, uint32_t pin, int state);
+void gpio_togglepin(GPIO_TypeDef *Port, uint32_t pin);
+
+
+
