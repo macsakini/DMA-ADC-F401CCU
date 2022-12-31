@@ -26,14 +26,18 @@ int main(void){
 	while(1){
 		gpio_togglepin(GPIOC, 13);
 		//delayMs(1000);
-		if(GPIOC->IDR & GPIO_IDR_IDR_13){
+		if(!(GPIOA->IDR & (1<<3))){
+			
 			//Control Movement
 			determineSpeedA();
+			
 			determineSpeedB();
+			
 			initiateBrake();
+			
 		}else{
-			TIM10->CCR1 = 500;
-			TIM11->CCR1 = 500;
+			TIM10->CCR1 = 1000;
+			TIM11->CCR1 = 1000;
 		}
 	}
 }

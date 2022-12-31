@@ -1,3 +1,4 @@
+#pragma once
 //Controls angle to turn front axle
 void determineSpeedA(void);
 

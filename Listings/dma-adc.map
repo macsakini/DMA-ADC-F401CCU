@@ -329,8 +329,8 @@ Image Symbol Table
     [Anonymous Symbol]                       0x080005a8   Section        0  hal_gpio.o(.text.gpio_togglepin)
     [Anonymous Symbol]                       0x080005c4   Section        0  motor.o(.text.initiateBrake)
     [Anonymous Symbol]                       0x080005dc   Section        0  main_1.o(.text.main)
-    $v0                                      0x08000644   Number         0  fpinit.o(x$fpl$fpinit)
-    x$fpl$fpinit                             0x08000644   Section       26  fpinit.o(x$fpl$fpinit)
+    $v0                                      0x08000642   Number         0  fpinit.o(x$fpl$fpinit)
+    x$fpl$fpinit                             0x08000642   Section       26  fpinit.o(x$fpl$fpinit)
     .bss                                     0x20000000   Section       96  libspace.o(.bss)
     myticks                                  0x20000060   Data           4  hal_timer.o(.bss.myticks)
     [Anonymous Symbol]                       0x20000060   Section        0  hal_timer.o(.bss.myticks)
@@ -514,12 +514,12 @@ Image Symbol Table
     determineSpeedB                          0x080005a5   Thumb Code     2  motor.o(.text.determineSpeedB)
     gpio_togglepin                           0x080005a9   Thumb Code    26  hal_gpio.o(.text.gpio_togglepin)
     initiateBrake                            0x080005c5   Thumb Code    24  motor.o(.text.initiateBrake)
-    main                                     0x080005dd   Thumb Code   104  main_1.o(.text.main)
-    _fp_init                                 0x08000645   Thumb Code    26  fpinit.o(x$fpl$fpinit)
-    __fplib_config_fpu_vfp                   0x0800065d   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    __fplib_config_pureend_doubles           0x0800065d   Thumb Code     0  fpinit.o(x$fpl$fpinit)
-    Region$$Table$$Base                      0x08000660   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08000670   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x080005dd   Thumb Code   102  main_1.o(.text.main)
+    _fp_init                                 0x08000643   Thumb Code    26  fpinit.o(x$fpl$fpinit)
+    __fplib_config_fpu_vfp                   0x0800065b   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    __fplib_config_pureend_doubles           0x0800065b   Thumb Code     0  fpinit.o(x$fpl$fpinit)
+    Region$$Table$$Base                      0x0800065c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0800066c   Number         0  anon$$obj.o(Region$$Table)
     __libspace_start                         0x20000000   Data          96  libspace.o(.bss)
     __temporary_stack_top$libspace           0x20000060   Data           0  libspace.o(.bss)
 
@@ -531,9 +531,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000219
 
-  Load Region LR_1 (Base: 0x08000000, Size: 0x00000670, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x08000000, Size: 0x0000066c, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00000670, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000066c, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -613,24 +613,23 @@ Memory Map of the image
     0x080005a8   0x080005a8   0x0000001a   Code   RO           37    .text.gpio_togglepin  hal_gpio.o
     0x080005c2   0x080005c2   0x00000002   PAD
     0x080005c4   0x080005c4   0x00000018   Code   RO            6    .text.initiateBrake  motor.o
-    0x080005dc   0x080005dc   0x00000068   Code   RO           15    .text.main          main_1.o
-    0x08000644   0x08000644   0x0000001a   Code   RO          179    x$fpl$fpinit        fz_wm.l(fpinit.o)
-    0x0800065e   0x0800065e   0x00000002   PAD
-    0x08000660   0x08000660   0x00000010   Data   RO          254    Region$$Table       anon$$obj.o
+    0x080005dc   0x080005dc   0x00000066   Code   RO           15    .text.main          main_1.o
+    0x08000642   0x08000642   0x0000001a   Code   RO          179    x$fpl$fpinit        fz_wm.l(fpinit.o)
+    0x0800065c   0x0800065c   0x00000010   Data   RO          254    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x08000670, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x0800066c, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
 
     **** No section assigned to this execution region ****
 
 
-    Execution Region ER_ZI (Exec base: 0x20000000, Load base: 0x08000670, Size: 0x00000668, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Exec base: 0x20000000, Load base: 0x0800066c, Size: 0x00000668, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x20000000        -       0x00000060   Zero   RW          119    .bss                c_w.l(libspace.o)
     0x20000060        -       0x00000004   Zero   RW           56    .bss.myticks        hal_timer.o
-    0x20000064   0x08000670   0x00000004   PAD
+    0x20000064   0x0800066c   0x00000004   PAD
     0x20000068        -       0x00000200   Zero   RW           64    HEAP                startup_stm32f401xc.o
     0x20000268        -       0x00000400   Zero   RW           63    STACK               startup_stm32f401xc.o
 
@@ -644,13 +643,13 @@ Image component sizes
 
         26          0          0          0          0       1284   hal_gpio.o
        162          0          0          0          4       3650   hal_timer.o
-       632          0          0          0          0       2541   main_1.o
+       630          0          0          0          0       2541   main_1.o
         28          0          0          0          0       1200   motor.o
         64         26        404          0       1536        884   startup_stm32f401xc.o
         18          0          0          0          0       2700   system_stm32f4xx.o
 
     ----------------------------------------------------------------------
-       944         26        420          0       1544      12259   Object Totals
+       942         26        420          0       1544      12259   Object Totals
          0          0         16          0          0          0   (incl. Generated)
         14          0          0          0          4          0   (incl. Padding)
 
@@ -680,8 +679,8 @@ Image component sizes
         26          0          0          0          0        116   fpinit.o
 
     ----------------------------------------------------------------------
-       284         16          0          0         96        700   Library Totals
-         8          0          0          0          0          0   (incl. Padding)
+       282         16          0          0         96        700   Library Totals
+         6          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -691,7 +690,7 @@ Image component sizes
         26          0          0          0          0        116   fz_wm.l
 
     ----------------------------------------------------------------------
-       284         16          0          0         96        700   Library Totals
+       282         16          0          0         96        700   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -700,15 +699,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      1228         42        420          0       1640      12655   Grand Totals
-      1228         42        420          0       1640      12655   ELF Image Totals
-      1228         42        420          0          0          0   ROM Totals
+      1224         42        420          0       1640      12655   Grand Totals
+      1224         42        420          0       1640      12655   ELF Image Totals
+      1224         42        420          0          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 1648 (   1.61kB)
+    Total RO  Size (Code + RO Data)                 1644 (   1.61kB)
     Total RW  Size (RW Data + ZI Data)              1640 (   1.60kB)
-    Total ROM Size (Code + RO Data + RW Data)       1648 (   1.61kB)
+    Total ROM Size (Code + RO Data + RW Data)       1644 (   1.61kB)
 
 ==============================================================================
 

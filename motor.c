@@ -16,6 +16,8 @@ void determineSpeedB(void){
 
 
 void initiateBrake(void){
+	
 	TIM10->CCR1 = 0;
 	TIM11->CCR1 = 0;
+	
 }
