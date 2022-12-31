@@ -17,6 +17,7 @@ int main(void){
 	
 	while(1){
 		gpio_togglepin(GPIOC, 13);
+		delayMs(1000);
 	}
 }
 
